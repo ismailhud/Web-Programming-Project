@@ -85,8 +85,8 @@ Web-Programming-Project/
 
 2. **Set up the frontend**
    - Place the project in your web server directory (e.g., `htdocs` for XAMPP)
-   - Access the application via `http://localhost/Web-Programming-Project/frontend/views/index.html`
-   - Alternative: `http://localhost/Web-Programming-Project/` (redirects automatically via .htaccess)
+   - Access the application via `http://localhost/IsmailHuduti/Web-Programming-Project/Web-Programming-Project/frontend/views/index.html`
+   - Alternative: `http://localhost/IsmailHuduti/Web-Programming-Project/Web-Programming-Project/` (redirects automatically via .htaccess)
 
 3. **Database Setup**
    - Review the ERD.md file for database schema
@@ -105,8 +105,8 @@ Web-Programming-Project/
 #### Development Mode
 1. Start your local web server (XAMPP, WAMP, etc.)
 2. Navigate to one of these URLs:
-   - **Main**: `http://localhost/Web-Programming-Project/frontend/views/index.html`
-   - **Root**: `http://localhost/Web-Programming-Project/` (auto-redirects)
+   - **Main**: `http://localhost/IsmailHuduti/Web-Programming-Project/Web-Programming-Project/frontend/views/index.html`
+   - **Root**: `http://localhost/IsmailHuduti/Web-Programming-Project/Web-Programming-Project/` (auto-redirects)
 3. The SPA will load and you can navigate between different sections
 
 #### Features Available
