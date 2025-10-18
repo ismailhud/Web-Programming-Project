@@ -1,0 +1,49 @@
+<div class="page-content">
+    <div class="register-container">
+        <h1>Register</h1>
+        
+        <form id="registerForm" class="register-form">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userType">User Type:</label>
+                <select id="userType" name="userType" required>
+                    <option value="">Select User Type</option>
+                    <option value="customer">Customer</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </form>
+        
+        <div class="register-links">
+            <p>Already have an account? <a href="#login">Login here</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="page-content">
+    <div class="users-header">
+        <h1>User Management</h1>
+        <button class="btn" onclick="showAddUserForm()">Add New User</button>
+    </div>
+
+    <div id="addUserForm" class="form-container hidden">
+        <h2>Add New User</h2>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="userName">Full Name:</label>
+                <input type="text" id="userName" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userPhone">Phone Number:</label>
+                <input type="tel" id="userPhone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userPassword">Password:</label>
+                <input type="password" id="userPassword" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="userType">User Type:</label>
+                <select id="userType" name="userType" required>
+                    <option value="">Select Type</option>
+                    <option value="customer">Customer</option>
+                    <option value="admin">Administrator</option>
+                    <option value="staff">Staff</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="userAddress">Address:</label>
+                <textarea id="userAddress" name="address" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="userStatus">Status:</label>
+                <select id="userStatus" name="status" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="suspended">Suspended</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn">Add User</button>
+                <button type="button" class="btn btn-danger" onclick="hideAddUserForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="users-filter">
+        <h2>Filter Users</h2>
+        <div class="filter-controls">
+            <input type="text" id="filterUserName" placeholder="Search by name">
+            <input type="email" id="filterUserEmail" placeholder="Search by email">
+            <select id="filterUserType">
+                <option value="">All Types</option>
+                <option value="customer">Customer</option>
+                <option value="admin">Administrator</option>
+                <option value="staff">Staff</option>
+            </select>
+            <select id="filterUserStatus">
+                <option value="">All Statuses</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="suspended">Suspended</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="users-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>User Type</th>
+                    <th>Status</th>
+                    <th>Registration Date</th>
+                    <th>Vehicles</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="usersTableBody">
+                <tr>
+                    <td colspan="8" class="text-center">Loading users...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

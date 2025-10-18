@@ -1,0 +1,9 @@
+# Routes Directory
+This directory will contain route handler files for the API endpoints.
+
+Example structure:
+- userRoutes.js
+- zoneRoutes.js
+- spotRoutes.js
+- reservationRoutes.js
+- vehicleRoutes.js

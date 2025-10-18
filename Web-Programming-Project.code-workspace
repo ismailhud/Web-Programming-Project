@@ -1,8 +1,91 @@
 {
 	"folders": [
 		{
+			"name": "Web-Programming-Project",
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/node_modules": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true
+		},
+		"emmet.includeLanguages": {
+			"javascript": "javascriptreact"
+		},
+		"html.format.indentInnerHtml": true,
+		"html.format.wrapLineLength": 120,
+		"css.validate": true,
+		"javascript.validate.enable": true,
+		"editor.formatOnSave": true,
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true,
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true,
+		"liveServer.settings.root": "/frontend/views",
+		"liveServer.settings.CustomBrowser": "chrome"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.vscode-json",
+			"ritwickdey.LiveServer",
+			"formulahendry.auto-rename-tag",
+			"bradlc.vscode-tailwindcss",
+			"esbenp.prettier-vscode",
+			"ms-vscode.live-server"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Open in Browser",
+				"type": "node",
+				"request": "launch",
+				"program": "${workspaceFolder}/frontend/views/index.html",
+				"console": "integratedTerminal"
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Open Application",
+				"type": "shell",
+				"command": "start",
+				"args": [
+					"http://localhost/Web-Programming-Project/frontend/views/index.html"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				},
+				"problemMatcher": []
+			},
+			{
+				"label": "Start Live Server",
+				"type": "shell",
+				"command": "npx",
+				"args": [
+					"live-server",
+					"--port=3000",
+					"--entry-file=frontend/views/index.html"
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				},
+				"problemMatcher": []
+			}
+		]
+	}
 }

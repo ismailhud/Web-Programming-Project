@@ -1,0 +1,10 @@
+# DAO (Data Access Object) Directory
+This directory will contain data access layer files for database operations.
+
+Example structure:
+- userDAO.js
+- zoneDAO.js
+- spotDAO.js
+- reservationDAO.js
+- vehicleDAO.js
+- database.js (connection configuration)

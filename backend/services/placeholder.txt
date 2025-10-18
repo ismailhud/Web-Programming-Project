@@ -1,0 +1,10 @@
+# Services Directory
+This directory will contain business logic and service layer files.
+
+Example structure:
+- userService.js
+- zoneService.js
+- spotService.js
+- reservationService.js
+- vehicleService.js
+- authService.js

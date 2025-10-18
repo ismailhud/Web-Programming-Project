@@ -1,0 +1,97 @@
+<div class="page-content">
+    <div class="spots-header">
+        <h1>Parking Spots</h1>
+        <button class="btn" onclick="showAddSpotForm()">Add New Spot</button>
+    </div>
+
+    <div id="addSpotForm" class="form-container hidden">
+        <h2>Add New Spot</h2>
+        <form id="spotForm">
+            <div class="form-group">
+                <label for="spotNumber">Spot Number:</label>
+                <input type="text" id="spotNumber" name="spotNumber" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="spotZone">Zone:</label>
+                <select id="spotZone" name="spotZone" required>
+                    <option value="">Select Zone</option>
+                    <!-- Zones will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="spotType">Spot Type:</label>
+                <select id="spotType" name="spotType" required>
+                    <option value="">Select Type</option>
+                    <option value="regular">Regular</option>
+                    <option value="compact">Compact</option>
+                    <option value="large">Large Vehicle</option>
+                    <option value="handicap">Handicap</option>
+                    <option value="electric">Electric Vehicle</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="spotStatus">Status:</label>
+                <select id="spotStatus" name="spotStatus" required>
+                    <option value="available">Available</option>
+                    <option value="occupied">Occupied</option>
+                    <option value="reserved">Reserved</option>
+                    <option value="maintenance">Under Maintenance</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn">Add Spot</button>
+                <button type="button" class="btn btn-danger" onclick="hideAddSpotForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="spots-filter">
+        <h2>Filter Spots</h2>
+        <div class="filter-controls">
+            <select id="filterZone">
+                <option value="">All Zones</option>
+                <!-- Zones will be populated dynamically -->
+            </select>
+            <select id="filterStatus">
+                <option value="">All Statuses</option>
+                <option value="available">Available</option>
+                <option value="occupied">Occupied</option>
+                <option value="reserved">Reserved</option>
+                <option value="maintenance">Under Maintenance</option>
+            </select>
+            <select id="filterType">
+                <option value="">All Types</option>
+                <option value="regular">Regular</option>
+                <option value="compact">Compact</option>
+                <option value="large">Large Vehicle</option>
+                <option value="handicap">Handicap</option>
+                <option value="electric">Electric Vehicle</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="spots-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Spot Number</th>
+                    <th>Zone</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Current Vehicle</th>
+                    <th>Reserved Until</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="spotsTableBody">
+                <tr>
+                    <td colspan="7" class="text-center">Loading spots...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

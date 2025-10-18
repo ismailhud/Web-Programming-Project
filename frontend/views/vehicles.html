@@ -1,0 +1,117 @@
+<div class="page-content">
+    <div class="vehicles-header">
+        <h1>Vehicles</h1>
+        <button class="btn" onclick="showAddVehicleForm()">Add New Vehicle</button>
+    </div>
+
+    <div id="addVehicleForm" class="form-container hidden">
+        <h2>Add New Vehicle</h2>
+        <form id="vehicleForm">
+            <div class="form-group">
+                <label for="ownerSelect">Vehicle Owner:</label>
+                <select id="ownerSelect" name="ownerId" required>
+                    <option value="">Select Owner</option>
+                    <!-- Users will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="licensePlate">License Plate:</label>
+                <input type="text" id="licensePlate" name="licensePlate" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleMake">Make:</label>
+                <input type="text" id="vehicleMake" name="make" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleModel">Model:</label>
+                <input type="text" id="vehicleModel" name="model" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleYear">Year:</label>
+                <input type="number" id="vehicleYear" name="year" min="1900" max="2030" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleColor">Color:</label>
+                <input type="text" id="vehicleColor" name="color" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleType">Vehicle Type:</label>
+                <select id="vehicleType" name="vehicleType" required>
+                    <option value="">Select Type</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="truck">Truck</option>
+                    <option value="motorcycle">Motorcycle</option>
+                    <option value="electric">Electric Vehicle</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="van">Van</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleSize">Size Category:</label>
+                <select id="vehicleSize" name="sizeCategory" required>
+                    <option value="">Select Size</option>
+                    <option value="compact">Compact</option>
+                    <option value="regular">Regular</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn">Add Vehicle</button>
+                <button type="button" class="btn btn-danger" onclick="hideAddVehicleForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="vehicles-filter">
+        <h2>Filter Vehicles</h2>
+        <div class="filter-controls">
+            <input type="text" id="filterLicensePlate" placeholder="Search by license plate">
+            <select id="filterVehicleType">
+                <option value="">All Types</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="truck">Truck</option>
+                <option value="motorcycle">Motorcycle</option>
+                <option value="electric">Electric Vehicle</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="van">Van</option>
+            </select>
+            <select id="filterOwner">
+                <option value="">All Owners</option>
+                <!-- Owners will be populated dynamically -->
+            </select>
+        </div>
+    </div>
+
+    <div class="vehicles-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>License Plate</th>
+                    <th>Owner</th>
+                    <th>Make & Model</th>
+                    <th>Year</th>
+                    <th>Color</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="vehiclesTableBody">
+                <tr>
+                    <td colspan="9" class="text-center">Loading vehicles...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
