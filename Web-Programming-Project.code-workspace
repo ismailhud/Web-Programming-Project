@@ -12,6 +12,10 @@
 			"**/.DS_Store": true,
 			"**/Thumbs.db": true
 		},
+		"git.autoRepositoryDetection": "subFolders",
+		"git.ignoredRepositories": [
+			"C:/xampp/htdocs/IsmailHuduti/Web-Programming-Project"
+		],
 		"emmet.includeLanguages": {
 			"javascript": "javascriptreact"
 		},
