@@ -2,75 +2,42 @@
 <html lang="en">
 
     <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <title>Burch University Parking</title>
-        <meta name="description" content="Burch University Parking Management System">
-        <meta name="keywords" content="parking, management, system, reservations">
+        <meta name="description" content="Smart campus parking: zones, spots, reservations, vehicles and users." />
+        <meta name="keywords" content="parking, university, reservations, spots, zones, vehicles, users" />
 
         <!-- Favicons -->
-        <link href="../assets/img/favicon.png" rel="icon">
-        <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <link href="../assets/img/favicon.png" rel="icon" />
+        <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com" rel="preconnect">
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@400;500;700&family=Poppins:wght@300;400;500;700&display=swap"
-            rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;700;800&display=swap"
+            rel="stylesheet" />
 
-        <!-- Vendor CSS Files -->
-        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-        <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-        <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <!-- Vendor CSS Files (relative to /frontend/views/) -->
+        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+        <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+        <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+        <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-        <!-- Main CSS File -->
-        <link href="../css/main.css" rel="stylesheet">
+        <!-- Theme CSS -->
+        <link href="../css/main.css" rel="stylesheet" />
 
         <style>
             html {
                 scroll-behavior: smooth;
             }
 
-            /* Ensure hero section spacing */
-            #home {
-                scroll-margin-top: 80px;
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                background: linear-gradient(135deg, #1818d4f3 0%, #000000 100%);
-                color: #fff;
-            }
-
-            #home h1 span {
-                color: #00bfff;
-            }
-
-            #home p {
-                font-size: 1.1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            #home .btn-get-started {
-                background: #00bfff;
-                color: #fff;
-                padding: 0.8rem 1.8rem;
-                border-radius: 4px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: background 0.3s;
-            }
-
-            #home .btn-get-started:hover {
-                background: #007acc;
-            }
-
-            main.main {
-                margin-top: 90px;
+            #home,
+            section.section,
+            .page-title {
+                scroll-margin-top: 90px;
             }
         </style>
     </head>
@@ -78,10 +45,10 @@
     <body class="index-page">
 
         <!-- Header -->
-        <header id="header" class="header d-flex align-items-center fixed-top">
-            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <header id="header" class="header d-flex align-items-center sticky-top">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
 
-                <a href="#home" class="logo d-flex align-items-center">
+                <a href="#home" class="logo d-flex align-items-center me-auto me-xl-0">
                     <h1 class="sitename">Burch University Parking</h1>
                 </a>
 
@@ -94,74 +61,617 @@
                         <li><a href="#reservations">Reservations</a></li>
                         <li><a href="#vehicles">Vehicles</a></li>
                         <li><a href="#users">Users</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#login">Login</a></li>
                         <li><a href="#register">Register</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list" role="button" tabindex="0"
                         aria-label="Toggle navigation" aria-controls="navmenu" aria-expanded="false"></i>
                 </nav>
-
             </div>
         </header>
 
-        <!-- Hero Section (Home) -->
-        <section id="home" class="hero section dark-background" data-aos="fade-up" aria-label="Home">
-            <div class="container">
-                <h1>Welcome to <span>Burch University Parking</span></h1>
-                <p>Smart Parking Management for Students & Staff — Efficient • Reliable • Secure</p>
-                <a href="#dashboard" class="btn-get-started">Go to Dashboard</a>
+        <!-- MAIN: Home sections above; SPA views inject below using hash routes -->
+
+        <!-- HERO -->
+        <section id="home" class="hero section">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-10">
+                        <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+                            <h1>Smart Campus Parking for Students & Staff</h1>
+                            <p>Reserve spots, manage vehicles, and monitor zones — all in one place.</p>
+                            <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
+                                <a href="#dashboard" class="btn btn-primary">Open Dashboard</a>
+                                <a href="#register" class="btn btn-outline"><i class="bi bi-person-plus"></i> Create
+                                    Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional decorative/hero image -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="hero-image">
+                                <img src="../assets/img/about/about-15.webp" alt="Campus Parking" class="img-fluid">
+                                <div class="image-decoration"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero stats -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-geo-alt"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="8"
+                                        data-purecounter-duration="1"></span></h3>
+                                <p>Parking Zones</p>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="540"
+                                        data-purecounter-duration="1"></span>+</h3>
+                                <p>Total Spots</p>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-person-badge"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="1200"
+                                        data-purecounter-duration="1"></span>+</h3>
+                                <p>Registered Users</p>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-check2-circle"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="95"
+                                        data-purecounter-duration="1"></span>%</h3>
+                                <p>On-time Reservations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Main Content (SPA Mount) -->
+        <!-- About Section -->
+        <section id="about" class="about section" aria-label="About">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3">About Burch Parking</h2>
+                        <p class="mb-0">Modern campus parking management for students and staff with zones, spots,
+                            and reservations, built on a clean SPA architecture.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 bg-light rounded-3 shadow-sm">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="h2 mb-0" data-purecounter-start="0" data-purecounter-end="4"
+                                        data-purecounter-duration="1" class="purecounter">4</div>
+                                    <small class="text-muted">Zones</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h2 mb-0" data-purecounter-start="0" data-purecounter-end="120"
+                                        data-purecounter-duration="1" class="purecounter">120</div>
+                                    <small class="text-muted">Spots</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h2 mb-0" data-purecounter-start="0" data-purecounter-end="300"
+                                        data-purecounter-duration="1" class="purecounter">300</div>
+                                    <small class="text-muted">Users</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview Section (Home) -->
+        <section id="home-services" class="services section" aria-label="Services Overview">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 bg-light rounded-3 h-100">
+                            <div class="icon mb-2"><i class="bi bi-map text-primary"></i></div>
+                            <h4 class="title mb-2">Zone Management</h4>
+                            <p class="mb-0">Organize campus areas into clear, navigable parking zones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 bg-light rounded-3 h-100">
+                            <div class="icon mb-2"><i class="bi bi-grid-1x2 text-primary"></i></div>
+                            <h4 class="title mb-2">Spot Allocation</h4>
+                            <p class="mb-0">Track available spots and optimize allocation in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 bg-light rounded-3 h-100">
+                            <div class="icon mb-2"><i class="bi bi-calendar2-check text-primary"></i></div>
+                            <h4 class="title mb-2">Easy Reservations</h4>
+                            <p class="mb-0">Reserve parking with a quick, user-friendly workflow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#services" class="btn btn-primary">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section" aria-label="Contact">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="form-container p-4 bg-light rounded-3 shadow-sm">
+                            <h3 class="mb-2">Contact Us</h3>
+                            <p class="mb-4">Have questions about parking zones, spots, or reservations? Reach out to us.
+                            </p>
+                            <div class="text-center">
+                                <a href="#services" class="btn btn-outline-primary me-2">Our Services</a>
+                                <a href="#dashboard" class="btn btn-primary">Go to Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPA Mount -->
         <main id="app" class="main"></main>
 
-        <!-- Footer -->
-        <footer id="footer" class="footer dark-background">
+        <!-- HERO -->
+        <section id="home" class="hero section">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
 
-            <div class="container footer-top">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-10">
+                        <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+                            <h1>Smart Campus Parking for Students & Staff</h1>
+                            <p>Reserve spots, manage vehicles, and monitor zones — all in one place.</p>
+                            <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
+                                <a href="#dashboard" class="btn btn-primary">Open Dashboard</a>
+                                <a href="#register" class="btn btn-outline"><i class="bi bi-person-plus"></i> Create
+                                    Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional decorative/hero image -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="hero-image">
+                                <img src="../assets/img/about/about-15.webp" alt="Campus Parking" class="img-fluid">
+                                <div class="image-decoration"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero stats -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-geo-alt"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="8"
+                                        data-purecounter-duration="1"></span></h3>
+                                <p>Parking Zones</p>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="540"
+                                        data-purecounter-duration="1"></span>+</h3>
+                                <p>Total Spots</p>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-person-badge"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="1200"
+                                        data-purecounter-duration="1"></span>+</h3>
+                                <p>Registered Users</p>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="bi bi-check2-circle"></i></div>
+                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="95"
+                                        data-purecounter-duration="1"></span>%</h3>
+                                <p>On-time Reservations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section" aria-label="About">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3">About Burch Parking</h2>
+                        <p class="mb-0">Modern campus parking management for students and staff with zones, spots,
+                            and reservations, built on a clean SPA architecture.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 bg-light rounded-3 shadow-sm">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="h2 mb-0" data-purecounter-start="0" data-purecounter-end="4"
+                                        data-purecounter-duration="1" class="purecounter">4</div>
+                                    <small class="text-muted">Zones</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h2 mb-0" data-purecounter-start="0" data-purecounter-end="120"
+                                        data-purecounter-duration="1" class="purecounter">120</div>
+                                    <small class="text-muted">Spots</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h2 mb-0" data-purecounter-start="0" data-purecounter-end="300"
+                                        data-purecounter-duration="1" class="purecounter">300</div>
+                                    <small class="text-muted">Users</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview Section (Home) -->
+        <section id="home-services" class="services section" aria-label="Services Overview">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row gy-4">
-                    <div class="col-lg-4 col-md-6 footer-about">
-                        <a href="#home" class="logo d-flex align-items-center">
-                            <span class="sitename">Burch University Parking</span>
-                        </a>
-                        <div class="footer-contact pt-3">
-                            <p>Smart Parking Management System</p>
-                            <p>Burch University - Sarajevo</p>
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 bg-light rounded-3 h-100">
+                            <div class="icon mb-2"><i class="bi bi-map text-primary"></i></div>
+                            <h4 class="title mb-2">Zone Management</h4>
+                            <p class="mb-0">Organize campus areas into clear, navigable parking zones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 bg-light rounded-3 h-100">
+                            <div class="icon mb-2"><i class="bi bi-grid-1x2 text-primary"></i></div>
+                            <h4 class="title mb-2">Spot Allocation</h4>
+                            <p class="mb-0">Track available spots and optimize allocation in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 bg-light rounded-3 h-100">
+                            <div class="icon mb-2"><i class="bi bi-calendar2-check text-primary"></i></div>
+                            <h4 class="title mb-2">Easy Reservations</h4>
+                            <p class="mb-0">Reserve parking with a quick, user-friendly workflow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#services" class="btn btn-primary">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section" aria-label="Contact">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="form-container p-4 bg-light rounded-3 shadow-sm">
+                            <h3 class="mb-2">Contact Us</h3>
+                            <p class="mb-4">Have questions about parking zones, spots, or reservations? Reach out to
+                                us.</p>
+                            <div class="text-center">
+                                <a href="#services" class="btn btn-outline-primary me-2">Our Services</a>
+                                <a href="#dashboard" class="btn btn-primary">Go to Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about section">
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">About</span>
+                <h2>About</h2>
+                <p>Efficient, reliable, and secure parking management for the Burch campus.</p>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gx-0 gx-lg-5 gy-5 align-items-center">
+                    <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
+                        <div class="image-wrapper">
+                            <div class="image-box">
+                                <img src="../assets/img/about/about-square-15.webp" class="img-fluid" alt="About Image"
+                                    loading="lazy" />
+                            </div>
+                            <div class="experience-box" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="years">24/7</div>
+                                <div class="text">Campus<br />Access</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#dashboard">Dashboard</a></li>
-                            <li><a href="#zones">Zones</a></li>
-                            <li><a href="#reservations">Reservations</a></li>
-                        </ul>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="content">
+                            <div class="section-header">
+                                <h2>Everything you need to park with confidence</h2>
+                            </div>
+
+                            <p class="highlight-text">Reserve in advance, view availability by zone, register
+                                vehicles, and manage your profile — all in one responsive web app.</p>
+
+                            <div class="features-list">
+                                <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="icon-box"><i class="bi bi-check2-circle"></i></div>
+                                    <div class="text">
+                                        <h4>Live Availability</h4>
+                                        <p>Up-to-date spot counts across campus zones.</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="icon-box"><i class="bi bi-calendar-check"></i></div>
+                                    <div class="text">
+                                        <h4>Easy Reservations</h4>
+                                        <p>Book before you arrive and avoid circling.</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
+                                    <div class="icon-box"><i class="bi bi-person-vcard"></i></div>
+                                    <div class="text">
+                                        <h4>Users & Vehicles</h4>
+                                        <p>Securely manage vehicles and roles for students and staff.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cta-buttons">
+                                <a href="#reservations" class="btn-learn-more">Make a Reservation</a>
+                                <a href="#zones" class="btn-get-started">View Zones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES (Key Features) -->
+        <section id="services" class="services section">
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">Features</span>
+                <h2>Key Features</h2>
+                <p>All the essentials for a smooth parking experience.</p>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="services-container">
+                    <div class="row g-4">
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-item">
+                                <div class="service-icon"><i class="bi bi-geo"></i></div>
+                                <div class="service-content">
+                                    <span class="service-number">01</span>
+                                    <h3 class="service-title">Zone Management</h3>
+                                    <p class="service-text">Define campus zones, capacities, and rules for fair and
+                                        clear usage.</p>
+                                    <a href="#zones" class="service-link">Manage Zones <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-item">
+                                <div class="service-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+                                <div class="service-content">
+                                    <span class="service-number">02</span>
+                                    <h3 class="service-title">Spot Availability</h3>
+                                    <p class="service-text">Track available, occupied, and reserved spots in real
+                                        time.</p>
+                                    <a href="#spots" class="service-link">View Spots <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="service-item">
+                                <div class="service-icon"><i class="bi bi-calendar2-check"></i></div>
+                                <div class="service-content">
+                                    <span class="service-number">03</span>
+                                    <h3 class="service-title">Reservations</h3>
+                                    <p class="service-text">Book ahead. Reduce congestion. Arrive stress-free.</p>
+                                    <a href="#reservations" class="service-link">Make a Reservation <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="service-item">
+                                <div class="service-icon"><i class="bi bi-person-badge"></i></div>
+                                <div class="service-content">
+                                    <span class="service-number">04</span>
+                                    <h3 class="service-title">Users & Vehicles</h3>
+                                    <p class="service-text">Register vehicles and manage roles for students, staff,
+                                        and admins.</p>
+                                    <a href="#users" class="service-link">Manage Users <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-wrapper mt-5 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="cta-box">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4">
+                                        <div class="cta-image" data-aos="zoom-in" data-aos-delay="200">
+                                            <img src="../assets/img/services/services-8.webp" alt="Parking Services"
+                                                class="img-fluid rounded-circle" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="cta-content text-lg-start" data-aos="fade-left"
+                                            data-aos-delay="300">
+                                            <h3>Ready to get started?</h3>
+                                            <p>Register now and experience easy, organized campus parking.</p>
+                                            <a href="#register" class="primary-btn">Create your account</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT (optional static) -->
+        <section id="contact" class="contact section light-background">
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">Contact</span>
+                <h2>Contact</h2>
+                <p>Questions about parking? Reach out to our campus team.</p>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                    <div class="col-lg-5">
+                        <div class="info-wrap">
+                            <div class="info-item d-flex">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>International Burch University, Sarajevo</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p>+387 …</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email Us</h3>
+                                    <p>parking@ibu.edu.ba</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Management</h4>
-                        <ul>
-                            <li><a href="#vehicles">Vehicles</a></li>
-                            <li><a href="#users">Users</a></li>
-                            <li><a href="#login">Login</a></li>
-                            <li><a href="#register">Register</a></li>
-                        </ul>
+                    <!-- Static form (no backend in M1) -->
+                    <div class="col-lg-7">
+                        <form class="php-email-form" onsubmit="event.preventDefault();">
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                        required />
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                        required />
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                        required />
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message"
+                                        required></textarea>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
 
-                    <div class="col-lg-4 col-md-12 footer-newsletter">
-                        <h4>University Information</h4>
-                        <p>Burch University - International Burch University of Sarajevo</p>
-                        <p>Modern Campus Parking Solutions</p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer light-background">
+            <div class="container">
+                <div class="row gy-3">
+                    <div class="col-lg-3 col-md-6 d-flex">
+                        <i class="bi bi-geo-alt icon"></i>
+                        <div class="address">
+                            <h4>Campus</h4>
+                            <p>International Burch University</p>
+                            <p>Sarajevo, BiH</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex">
+                        <i class="bi bi-telephone icon"></i>
+                        <div>
+                            <h4>Contact</h4>
+                            <p><strong>Phone:</strong> <span>+387 …</span><br>
+                                <strong>Email:</strong> <span>parking@ibu.edu.ba</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex">
+                        <i class="bi bi-clock icon"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p><strong>Mon–Sat:</strong> 7:00–22:00<br>
+                                <strong>Sunday:</strong> Closed
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h4>Links</h4>
+                        <div class="social-links d-flex">
+                            <a href="#dashboard" class="twitter"><i class="bi bi-speedometer2"></i></a>
+                            <a href="#zones" class="facebook"><i class="bi bi-geo"></i></a>
+                            <a href="#reservations" class="instagram"><i class="bi bi-calendar2-check"></i></a>
+                            <a href="#login" class="linkedin"><i class="bi bi-box-arrow-in-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="container copyright text-center mt-4">
-                <p>© <span>Copyright</span> <strong class="px-1 sitename">Burch University Parking</strong> <span>All
-                        Rights Reserved - Ismail Huduti 2025</span></p>
+                <p>© <span>Copyright</span>
+                    <strong class="px-1 sitename">Burch University Parking</strong>
+                    <span>All Rights Reserved</span>
+                </p>
+                <div class="credits">Design base: Nexa by BootstrapMade (free license)</div>
             </div>
         </footer>
 
@@ -173,21 +683,29 @@
         <!-- Preloader -->
         <div id="preloader"></div>
 
-        <!-- Vendor JS Files -->
+        <!-- Vendor JS Files (paths adjusted for /frontend/views/) -->
         <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="../assets/vendor/php-email-form/validate.js"></script>
         <script src="../assets/vendor/aos/aos.js"></script>
         <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
         <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-        <!-- Template Theme JS -->
+        <!-- Theme Main JS (rename Nexa’s assets/js/main.js to /js/theme-main.js) -->
         <script src="../js/theme-main.js"></script>
 
-        <!-- SPA Router JS -->
+        <!-- Your SPA Router (MUST be last) -->
         <script src="../js/main.js"></script>
 
-
+        <script>
+            // Kick animations on initial load of the home page
+            window.addEventListener("load", () => {
+                try { AOS.init(); } catch (e) { }
+                try { new PureCounter(); } catch (e) { }
+            });
+        </script>
     </body>
 
 </html>
