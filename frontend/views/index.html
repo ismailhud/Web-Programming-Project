@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com" rel="preconnect">
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@400;500;700&family=Poppins:wght@300;400;500;700&display=swap"
             rel="stylesheet">
 
         <!-- Vendor CSS Files -->
@@ -28,20 +28,66 @@
 
         <!-- Main CSS File -->
         <link href="../css/main.css" rel="stylesheet">
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Ensure hero section spacing */
+            #home {
+                scroll-margin-top: 80px;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: linear-gradient(135deg, #1818d4f3 0%, #000000 100%);
+                color: #fff;
+            }
+
+            #home h1 span {
+                color: #00bfff;
+            }
+
+            #home p {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            #home .btn-get-started {
+                background: #00bfff;
+                color: #fff;
+                padding: 0.8rem 1.8rem;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: background 0.3s;
+            }
+
+            #home .btn-get-started:hover {
+                background: #007acc;
+            }
+
+            main.main {
+                margin-top: 90px;
+            }
+        </style>
     </head>
 
     <body class="index-page">
 
+        <!-- Header -->
         <header id="header" class="header d-flex align-items-center fixed-top">
-            <div
-                class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-                <a href="#" class="logo d-flex align-items-center">
+                <a href="#home" class="logo d-flex align-items-center">
                     <h1 class="sitename">Burch University Parking</h1>
                 </a>
 
                 <nav id="navmenu" class="navmenu" aria-label="Primary">
                     <ul>
+                        <li><a href="#home" class="active">Home</a></li>
                         <li><a href="#dashboard">Dashboard</a></li>
                         <li><a href="#zones">Zones</a></li>
                         <li><a href="#spots">Spots</a></li>
@@ -58,15 +104,25 @@
             </div>
         </header>
 
-        <!-- SPA Content Area -->
+        <!-- Hero Section (Home) -->
+        <section id="home" class="hero section dark-background" data-aos="fade-up" aria-label="Home">
+            <div class="container">
+                <h1>Welcome to <span>Burch University Parking</span></h1>
+                <p>Smart Parking Management for Students & Staff — Efficient • Reliable • Secure</p>
+                <a href="#dashboard" class="btn-get-started">Go to Dashboard</a>
+            </div>
+        </section>
+
+        <!-- Main Content (SPA Mount) -->
         <main id="app" class="main"></main>
 
+        <!-- Footer -->
         <footer id="footer" class="footer dark-background">
 
             <div class="container footer-top">
                 <div class="row gy-4">
                     <div class="col-lg-4 col-md-6 footer-about">
-                        <a href="#" class="logo d-flex align-items-center">
+                        <a href="#home" class="logo d-flex align-items-center">
                             <span class="sitename">Burch University Parking</span>
                         </a>
                         <div class="footer-contact pt-3">
@@ -78,9 +134,9 @@
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
+                            <li><a href="#home">Home</a></li>
                             <li><a href="#dashboard">Dashboard</a></li>
                             <li><a href="#zones">Zones</a></li>
-                            <li><a href="#spots">Spots</a></li>
                             <li><a href="#reservations">Reservations</a></li>
                         </ul>
                     </div>
@@ -100,21 +156,19 @@
                         <p>Burch University - International Burch University of Sarajevo</p>
                         <p>Modern Campus Parking Solutions</p>
                     </div>
-
                 </div>
             </div>
 
             <div class="container copyright text-center mt-4">
                 <p>© <span>Copyright</span> <strong class="px-1 sitename">Burch University Parking</strong> <span>All
-                        Rights Reserved -
-                        Ismail Huduti 2025</span></p>
+                        Rights Reserved - Ismail Huduti 2025</span></p>
             </div>
-
         </footer>
 
         <!-- Scroll Top -->
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a>
 
         <!-- Preloader -->
         <div id="preloader"></div>
@@ -127,11 +181,12 @@
         <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
         <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-        <!-- Template Theme JS (Nexa) -->
+        <!-- Template Theme JS -->
         <script src="../js/theme-main.js"></script>
 
-        <!-- SPA/Project Main JS (includes SPA Router) -->
+        <!-- SPA Router JS -->
         <script src="../js/main.js"></script>
+
 
     </body>
 
