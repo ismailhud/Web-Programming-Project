@@ -261,7 +261,7 @@ async function loadDashboardData() {
 }
 
 async function loadZones() {
-    // TODO: Implement zones data loading from API  
+    // TODO: Implement zones data loading from API
     // Example: const zones = await apiService.request('/zones');
 }
 
