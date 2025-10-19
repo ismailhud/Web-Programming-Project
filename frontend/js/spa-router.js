@@ -61,6 +61,8 @@ class PageLoader {
             // Check cache first
             if (this.cache[pageName]) {
                 this.contentContainer.innerHTML = this.cache[pageName];
+                // Re-run vendor bootstraps for new DOM
+                if (typeof window.runViewBootstraps === 'function') window.runViewBootstraps(pageName);
                 this.initializePageScripts(pageName);
                 return;
             }
@@ -71,6 +73,8 @@ class PageLoader {
                 const html = await response.text();
                 this.cache[pageName] = html;
                 this.contentContainer.innerHTML = html;
+                // Re-run vendor bootstraps for new DOM
+                if (typeof window.runViewBootstraps === 'function') window.runViewBootstraps(pageName);
                 this.initializePageScripts(pageName);
             } else {
                 throw new Error(`Failed to load ${pageName}`);

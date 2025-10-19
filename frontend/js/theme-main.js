@@ -1,12 +1,12 @@
 /**
-* Template Name: iConstruction
-* Template URL: https://bootstrapmade.com/iconstruction-bootstrap-construction-template/
-* Updated: Jul 27 2025 with Bootstrap v5.3.7
+* Template Name: Nexa
+* Template URL: https://bootstrapmade.com/nexa-bootstrap-agency-template/
+* Updated: Aug 19 2025 with Bootstrap v5.3.7
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
 
-(function () {
+(function() {
   "use strict";
 
   /**
@@ -52,7 +52,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function (e) {
+    navmenu.addEventListener('click', function(e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -105,11 +105,6 @@
   window.addEventListener('load', aosInit);
 
   /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
    * Initiate glightbox
    */
   const glightbox = GLightbox({
@@ -117,10 +112,15 @@
   });
 
   /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
+  /**
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -135,37 +135,86 @@
 
   window.addEventListener("load", initSwiper);
 
-})();
+  /**
+   * Init isotope layout and filters
+   */
+  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
-// Reinitialize vendor plugins after SPA route changes
-window.runViewBootstraps = function (name) {
-  try {
-    // Re-run AOS animations
-    if (window.AOS && typeof window.AOS.init === 'function') {
-      window.AOS.init({ duration: 600, easing: 'ease-in-out', once: true, mirror: false });
-    }
-
-    // Re-bind GLightbox for any new elements
-    if (window.GLightbox) {
-      window.GLightbox({ selector: '.glightbox' });
-    }
-
-    // Re-init swiper sliders in the loaded view
-    if (window.Swiper) {
-      document.querySelectorAll('.init-swiper').forEach(function (swiperElement) {
-        const cfgEl = swiperElement.querySelector('.swiper-config');
-        if (!cfgEl) return;
-        let config = {};
-        try { config = JSON.parse(cfgEl.innerHTML.trim()); } catch { }
-        new window.Swiper(swiperElement, config);
+    let initIsotope;
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+        itemSelector: '.isotope-item',
+        layoutMode: layout,
+        filter: filter,
+        sortBy: sort
       });
-    }
+    });
 
-    // Re-init PureCounter if present
-    if (window.PureCounter) {
-      try { new window.PureCounter(); } catch { }
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+      filters.addEventListener('click', function() {
+        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+        this.classList.add('filter-active');
+        initIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        if (typeof aosInit === 'function') {
+          aosInit();
+        }
+      }, false);
+    });
+
+  });
+
+  /**
+   * Frequently Asked Questions Toggle
+   */
+  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
+    faqItem.addEventListener('click', () => {
+      faqItem.parentNode.classList.toggle('faq-active');
+    });
+  });
+
+  /**
+   * Correct scrolling position upon page load for URLs containing hash links.
+   */
+  window.addEventListener('load', function(e) {
+    if (window.location.hash) {
+      if (document.querySelector(window.location.hash)) {
+        setTimeout(() => {
+          let section = document.querySelector(window.location.hash);
+          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          window.scrollTo({
+            top: section.offsetTop - parseInt(scrollMarginTop),
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
     }
-  } catch (e) {
-    console.warn('runViewBootstraps error for', name, e);
+  });
+
+  /**
+   * Navmenu Scrollspy
+   */
+  let navmenulinks = document.querySelectorAll('.navmenu a');
+
+  function navmenuScrollspy() {
+    navmenulinks.forEach(navmenulink => {
+      if (!navmenulink.hash) return;
+      let section = document.querySelector(navmenulink.hash);
+      if (!section) return;
+      let position = window.scrollY + 200;
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      } else {
+        navmenulink.classList.remove('active');
+      }
+    })
   }
-};
+  window.addEventListener('load', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy);
+
+})();
