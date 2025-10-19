@@ -1,39 +1,149 @@
-<div class="page-content">
-    <h1>Dashboard</h1>
-    
-    <div class="dashboard-stats">
-        <div class="stat-card">
-            <h3>Total Zones</h3>
-            <p id="totalZones">0</p>
-        </div>
-        <div class="stat-card">
-            <h3>Total Spots</h3>
-            <p id="totalSpots">0</p>
-        </div>
-        <div class="stat-card">
-            <h3>Available Spots</h3>
-            <p id="availableSpots">0</p>
-        </div>
-        <div class="stat-card">
-            <h3>Active Reservations</h3>
-            <p id="activeReservations">0</p>
+<!-- Dashboard / Hero -->
+<section class="py-4 py-md-5 bg-light border-bottom">
+    <div class="container">
+        <div class="row align-items-center g-3">
+            <div class="col-md">
+                <h1 class="display-6 fw-bold mb-1">
+                    <i class="fa-solid fa-gauge-high me-2 text-primary"></i>Dashboard
+                </h1>
+                <p class="text-muted mb-0">Overview of zones, spots, and reservations.</p>
+            </div>
+            <div class="col-md-auto">
+                <a href="#reservations" class="btn btn-primary">
+                    <i class="fa-solid fa-plus me-1"></i> New Reservation
+                </a>
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="recent-activity">
-        <h2>Recent Activity</h2>
-        <div id="recentReservations">
-            <p>Loading recent reservations...</p>
+<!-- KPI Cards -->
+<section class="py-4">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-6 col-md-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="text-muted small mb-1">Total Zones</div>
+                        <div class="display-6 fw-bold text-primary" id="totalZones">0</div>
+                        <i class="fa-solid fa-map-location-dot mt-2 text-muted"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="text-muted small mb-1">Total Spots</div>
+                        <div class="display-6 fw-bold text-primary" id="totalSpots">0</div>
+                        <i class="fa-solid fa-square-parking mt-2 text-muted"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="text-muted small mb-1">Available Spots</div>
+                        <div class="display-6 fw-bold text-success" id="availableSpots">0</div>
+                        <i class="fa-regular fa-circle-check mt-2 text-muted"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="text-muted small mb-1">Active Reservations</div>
+                        <div class="display-6 fw-bold text-warning" id="activeReservations">0</div>
+                        <i class="fa-solid fa-calendar-check mt-2 text-muted"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="quick-actions">
-        <h2>Quick Actions</h2>
-        <div class="action-buttons">
-            <a href="#reservations" class="btn">New Reservation</a>
-            <a href="#zones" class="btn">Manage Zones</a>
-            <a href="#spots" class="btn">Manage Spots</a>
-            <a href="#vehicles" class="btn">Add Vehicle</a>
+<!-- Recent Activity + Quick Actions -->
+<section class="py-4">
+    <div class="container">
+        <div class="row g-3">
+            <!-- Recent Activity -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-white">
+                        <h5 class="m-0"><i class="fa-solid fa-clock-rotate-left me-2 text-primary"></i>Recent Activity
+                        </h5>
+                    </div>
+                    <div class="card-body" id="recentReservations">
+                        <div class="text-muted">Loading recent reservations…</div>
+                        <!-- For M1 keep static examples -->
+                        <ul class="list-group list-group-flush mt-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><i class="fa-solid fa-car-side text-success me-2"></i> Plate
+                                    <strong>BG-1234</strong> reserved <strong>A-001</strong></span>
+                                <span class="badge bg-success">Active</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><i class="fa-solid fa-car-side text-warning me-2"></i> Plate
+                                    <strong>SA-9876</strong> reserved <strong>B-015</strong></span>
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><i class="fa-solid fa-car-side text-danger me-2"></i> Plate
+                                    <strong>BI-2201</strong> reservation expired</span>
+                                <span class="badge bg-danger">Expired</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-white">
+                        <h5 class="m-0"><i class="fa-solid fa-bolt me-2 text-primary"></i>Quick Actions</h5>
+                    </div>
+                    <div class="card-body d-grid gap-2">
+                        <a href="#reservations" class="btn btn-primary">
+                            <i class="fa-solid fa-plus me-1"></i> New Reservation
+                        </a>
+                        <a href="#zones" class="btn btn-outline-secondary">
+                            <i class="fa-solid fa-map me-1"></i> Manage Zones
+                        </a>
+                        <a href="#spots" class="btn btn-outline-secondary">
+                            <i class="fa-solid fa-border-all me-1"></i> Manage Spots
+                        </a>
+                        <a href="#vehicles" class="btn btn-outline-secondary">
+                            <i class="fa-solid fa-car-side me-1"></i> Add Vehicle
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Dashboard specific styles -->
+<style>
+    .card {
+        border: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    }
+</style>
+
+<!-- Dashboard initialization script -->
+<script>
+    function init_dashboard() {
+        // Placeholder for any per-view JS (counters/animations later)
+        console.log("Dashboard loaded (M1 static)");
+
+        // Auto-call the init function when the view loads
+        if (typeof window[`init_dashboard`] === "function") {
+            window[`init_dashboard`]();
+        }
+    }
+
+    // If your router calls window["init_"+name], this will run automatically
+    if (typeof window[`init_dashboard`] === "function") {
+        window[`init_dashboard`]();
+    }
+</script>
