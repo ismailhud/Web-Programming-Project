@@ -54,21 +54,47 @@
 
                 <nav id="navmenu" class="navmenu" aria-label="Primary">
                     <ul>
+                        <!-- Visible items -->
                         <li><a href="#home" class="active">Home</a></li>
                         <li><a href="#dashboard">Dashboard</a></li>
-                        <li><a href="#zones">Zones</a></li>
-                        <li><a href="#spots">Spots</a></li>
-                        <li><a href="#reservations">Reservations</a></li>
-                        <li><a href="#vehicles">Vehicles</a></li>
-                        <li><a href="#users">Users</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+
+                        <!-- Dropdown: Manage -->
+                        <li class="dropdown">
+                            <a href="#">
+                                <span>Manage</span>
+                                <i class="bi bi-chevron-down toggle-dropdown" aria-hidden="true"></i>
+                            </a>
+                            <ul>
+                                <li><a href="#zones">Zones</a></li>
+                                <li><a href="#spots">Spots</a></li>
+                                <li><a href="#reservations">Reservations</a></li>
+                                <li><a href="#vehicles">Vehicles</a></li>
+                                <li><a href="#users">Users</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Dropdown: Explore -->
+                        <li class="dropdown">
+                            <a href="#">
+                                <span>Explore</span>
+                                <i class="bi bi-chevron-down toggle-dropdown" aria-hidden="true"></i>
+                            </a>
+                            <ul>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#portfolio">Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Visible items -->
                         <li><a href="#login">Login</a></li>
                         <li><a href="#register">Register</a></li>
                     </ul>
+
+                    <!-- Mobile toggle icon (BootstrapMade pattern) -->
                     <i class="mobile-nav-toggle d-xl-none bi bi-list" role="button" tabindex="0"
                         aria-label="Toggle navigation" aria-controls="navmenu" aria-expanded="false"></i>
                 </nav>
+
             </div>
         </header>
 
@@ -228,72 +254,28 @@
 
         <!-- SPA Mount -->
         <main id="app" class="main"></main>
-
-        <!-- HERO -->
-        <section id="home" class="hero section">
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
-            </div>
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-10">
-                        <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-                            <h1>Smart Campus Parking for Students & Staff</h1>
-                            <p>Reserve spots, manage vehicles, and monitor zones — all in one place.</p>
-                            <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
-                                <a href="#dashboard" class="btn btn-primary">Open Dashboard</a>
-                                <a href="#register" class="btn btn-outline"><i class="bi bi-person-plus"></i> Create
-                                    Account</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Optional decorative/hero image -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="hero-image">
-                                <img src="../assets/img/about/about-15.webp" alt="Campus Parking" class="img-fluid">
-                                <div class="image-decoration"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero stats -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
-                            <div class="stat-item">
-                                <div class="stat-icon"><i class="bi bi-geo-alt"></i></div>
-                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="8"
-                                        data-purecounter-duration="1"></span></h3>
-                                <p>Parking Zones</p>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon"><i class="bi bi-grid-3x3-gap"></i></div>
-                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="540"
-                                        data-purecounter-duration="1"></span>+</h3>
-                                <p>Total Spots</p>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon"><i class="bi bi-person-badge"></i></div>
-                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="1200"
-                                        data-purecounter-duration="1"></span>+</h3>
-                                <p>Registered Users</p>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon"><i class="bi bi-check2-circle"></i></div>
-                                <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="95"
-                                        data-purecounter-duration="1"></span>%</h3>
-                                <p>On-time Reservations</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+            <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="540"
+                    data-purecounter-duration="1"></span>+</h3>
+            <p>Total Spots</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="bi bi-person-badge"></i></div>
+            <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="1200"
+                    data-purecounter-duration="1"></span>+</h3>
+            <p>Registered Users</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="bi bi-check2-circle"></i></div>
+            <h3><span class="purecounter" data-purecounter-start="0" data-purecounter-end="95"
+                    data-purecounter-duration="1"></span>%</h3>
+            <p>On-time Reservations</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </section>
 
         <!-- About Section -->
