@@ -254,29 +254,35 @@ async function handleRegister(event) {
     }
 }
 
-// Data loading functions (placeholders for future implementation)
+// Data loading functions (ready for backend integration)
 async function loadDashboardData() {
-    console.log('Loading dashboard data...');
+    // TODO: Implement dashboard data loading from API
+    // Example: const data = await apiService.request('/dashboard');
 }
 
 async function loadZones() {
-    console.log('Loading zones...');
+    // TODO: Implement zones data loading from API  
+    // Example: const zones = await apiService.request('/zones');
 }
 
 async function loadSpots() {
-    console.log('Loading spots...');
+    // TODO: Implement spots data loading from API
+    // Example: const spots = await apiService.request('/spots');
 }
 
 async function loadReservations() {
-    console.log('Loading reservations...');
+    // TODO: Implement reservations data loading from API
+    // Example: const reservations = await apiService.request('/reservations');
 }
 
 async function loadVehicles() {
-    console.log('Loading vehicles...');
+    // TODO: Implement vehicles data loading from API
+    // Example: const vehicles = await apiService.request('/vehicles');
 }
 
 async function loadUsers() {
-    console.log('Loading users...');
+    // TODO: Implement users data loading from API
+    // Example: const users = await apiService.request('/users');
 }
 
 // Utility functions
