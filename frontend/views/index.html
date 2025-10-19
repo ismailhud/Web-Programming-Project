@@ -40,7 +40,7 @@
                     <h1 class="sitename">Burch University Parking</h1>
                 </a>
 
-                <nav id="navmenu" class="navmenu">
+                <nav id="navmenu" class="navmenu" aria-label="Primary">
                     <ul>
                         <li><a href="#dashboard">Dashboard</a></li>
                         <li><a href="#zones">Zones</a></li>
@@ -51,31 +51,15 @@
                         <li><a href="#login">Login</a></li>
                         <li><a href="#register">Register</a></li>
                     </ul>
-                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list" role="button" tabindex="0"
+                        aria-label="Toggle navigation" aria-controls="navmenu" aria-expanded="false"></i>
                 </nav>
 
             </div>
         </header>
 
         <!-- SPA Content Area -->
-        <main id="app" class="main">
-            <!-- Dynamic content will be loaded here by the SPA router -->
-            <section id="hero" class="hero section dark-background"
-                style="background: linear-gradient(135deg, #1818d4f3 0%, #000000 100%); min-height: 100vh; display: flex; align-items: center;">
-                <!-- Background gradient instead of image -->
-                <div class="container text-center">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <h1 data-aos="fade-up">Welcome to <span>Burch University Parking</span></h1>
-                        <p data-aos="fade-up" data-aos-delay="100">Smart Parking Management for Students &
-                            Staff<br>Efficient •
-                            Reliable • Secure</p>
-                        <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                            <a href="#dashboard" class="btn-get-started">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <main id="app" class="main"></main>
 
         <footer id="footer" class="footer dark-background">
 
@@ -146,9 +130,8 @@
         <!-- Template Theme JS (Nexa) -->
         <script src="../js/theme-main.js"></script>
 
-        <!-- SPA/Project Main JS -->
+        <!-- SPA/Project Main JS (includes SPA Router) -->
         <script src="../js/main.js"></script>
-        <script src="../js/spa-router.js"></script>
 
     </body>
 
